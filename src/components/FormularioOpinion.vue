@@ -1,32 +1,32 @@
 <template>
   <div class="container">
     <b-form @submit.prevent="onSubmit">
-      <label for="feedback-user">Nombre de usuario</label>
+      <label for="username">Nombre de usuario</label>
       <b-form-input
         v-model="userId"
         :state="validation"
-        id="feedback-user"
+        id="username"
       ></b-form-input>
       <b-form-invalid-feedback v-if="!validation">
         Tu nombre de usuario debe ser de 5 a 12 carácteres.
       </b-form-invalid-feedback>
 
-      <label for="feedback-user">Email</label>
+      <label for="email">Email</label>
       <b-form-input
         v-model="email"
         :state="validationEmail"
-        id="feedback-user"
+        id="email"
         type="email"
       ></b-form-input>
       <b-form-invalid-feedback v-if="!validationEmail">
         Formato de email inválido
       </b-form-invalid-feedback>
 
-      <label for="feedback-user">Password</label>
+      <label for="password">Password</label>
       <b-form-input
         v-model="password"
         :state="validationPassword"
-        id="feedback-user"
+        id="password"
         type="password"
       ></b-form-input>
       <b-form-invalid-feedback v-if="!validationPassword">

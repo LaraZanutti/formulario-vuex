@@ -1,6 +1,8 @@
 <template>
   <div class="tabla">
+    <b-spinner variant="light" class="mt-5" v-if="isLoading"></b-spinner>
     <b-table
+      v-else
       class="table-dark align-middle text-center"
       hover
       :items="getOpiniones"
@@ -30,7 +32,7 @@ export default {
     await this.traerOpiniones();
   },
   computed: {
-    ...mapGetters("opiniones", ["getOpiniones"]),
+    ...mapGetters("opiniones", ["getOpiniones", "isLoading"]),
   },
   methods: {
     ...mapActions("opiniones", ["traerOpiniones"]),
